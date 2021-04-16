@@ -4,6 +4,7 @@ try:
     import ttk
     import database.db as mdb
     import os
+    import getpass
 except ImportError:  # Python 3
     import tkinter as tk
     from tkinter import *
@@ -11,6 +12,10 @@ except ImportError:  # Python 3
     import tkinter.ttk as ttk
     import database.db as mdb
     import os
+    import getpass
+
+user = getpass.getuser()
+pathVaultMain = '/home/' + user + '/PyVault/KeyVault/main.py'
 
 class MultiColumnListbox(object):
     """use a ttk.TreeView as a multicolumn ListBox"""
@@ -105,7 +110,7 @@ class newWindow(tk.Toplevel):
         inputValue = tk.Label(self, text="Value")
         inputValue.grid(column=0, row=1)
         inputtxt2 = tk.Entry(self,
-                   width = 7, textvariable=v2)
+                   width = 20, textvariable=v2)
         inputtxt2.grid(column=1, row=1)
         #input = inputtxt.get("1.0","end-1c")
         #input2 = inputtxt2.get("1.0","end-1c")
@@ -150,7 +155,7 @@ def addToClipBoard(text):
 
 def update():
  root.destroy()
- os.system('python /home/belzebug/Documents/Projects/KeyVault/KeyVault/main.py')
+ os.system('python ' + pathVaultMain)
 
 if __name__ == '__main__':
     root = tk.Tk()
