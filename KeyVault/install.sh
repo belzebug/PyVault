@@ -4,4 +4,4 @@ git clone https://github.com/belzebug/PyVault
 mkdir ~/PyVault
 cp -avr PyVault/KeyVault ~/PyVault
 echo "alias pyvault='python ~/PyVault/KeyVault/main.py'" >> ~/.bashrc
-python ~/PyVault/KeyVault/setup.py
+python ~/PyVault/KeyVault/Utils/setup.py
