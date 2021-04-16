@@ -27,10 +27,8 @@ class MultiColumnListbox(object):
 
     def _selectItem(self, a):
         curItem = self.tree.focus()
-        print(self.tree.item(curItem))
         dico = self.tree.item(curItem)
         val = dico['values']
-        print(val[1])
         addToClipBoard(val[1])
 
 
@@ -123,8 +121,6 @@ class newWindow(tk.Toplevel):
                 command=self.registerNewKey).grid(column=1, row=2)
         
     def registerNewKey(self):
-        print(v1.get())
-        print(v2.get())
         mdb.writeKey(v1.get(), v2.get())
         self.destroy()
         
@@ -141,10 +137,8 @@ data_temp = mdb.readAll().fetchall()
 data = []
 for item in data_temp:
     new_item = (item[1], item[2])
-    print(new_item)
     data.append(new_item)
 
-print(data)
 
 #data = list.append()
 
